@@ -1,0 +1,62 @@
+{
+  "name": "fhevm-example-vestingwallet",
+  "version": "1.0.0",
+  "description": "Vesting wallet with encrypted amounts and EntropyOracle integration",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./artifacts ./cache ./coverage ./types ./coverage.json && npm run typechain",
+    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
+    "coverage": "cross-env SOLIDITY_COVERAGE=true hardhat coverage --temp artifacts --testfiles \"test/**/*.ts\" && npm run typechain",
+    "lint": "eslint --ignore-path ./.eslintignore --ext .js,.ts .",
+    "postcompile": "npm run typechain",
+    "prettier:check": "prettier --check \"**/*.{js,json,md,sol,ts,yml}\"",
+    "prettier:write": "prettier --write \"**/*.{js,json,md,sol,ts,yml}\"",
+    "test": "hardhat test",
+    "test:sepolia": "hardhat test --network sepolia",
+    "typechain": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat typechain"
+  },
+  "keywords": [
+    "fhevm",
+    "fhe",
+    "blockchain",
+    "ethereum",
+    "solidity"
+  ],
+  "author": "",
+  "license": "BSD-3-Clause-Clear",
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.3.0-1",
+    "@fhevm/mock-utils": "^0.3.0-0",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-ethers": "^3.1.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.1.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@zama-fhe/relayer-sdk": "0.3.0-6",
+    "chai": "^4.5.0",
+    "chai-as-promised": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "ethers": "^6.15.0",
+    "hardhat": "^2.26.0",
+    "hardhat-gas-reporter": "^1.0.8",
+    "@types/mocha": "^10.0.6",
+    "mocha": "^11.7.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-solidity": "^2.1.0",
+    "rimraf": "^6.0.1",
+    "solidity-coverage": "^0.8.16",
+    "ts-generator": "^0.1.1",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.9.1",
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
